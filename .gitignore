@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /bases/node_modules
+/tasks-todo/node_modules
 /.pnp
 .pnp.js
 
