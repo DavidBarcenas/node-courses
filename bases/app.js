@@ -1,4 +1,5 @@
 const { argv } = require('./config/yargs');
+const colors = require('colors');
 const { createFile, listTable } = require('./multiply/table');
 
 let command = argv._[0];
@@ -11,7 +12,7 @@ switch (command) {
   case 'create':
     createFile(argv.base, argv.limit)
       .then((resp) => {
-        console.log(resp);
+        console.log(colors.brightCyan(resp));
       })
       .catch((error) => {
         console.error(error);

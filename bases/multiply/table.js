@@ -1,6 +1,11 @@
 const fs = require('fs');
+const colors = require('colors');
 
 let listTable = (base, limit = 10) => {
+  console.log('============'.green);
+  console.log(`table from ${base} to ${limit}`.red);
+  console.log('============'.green);
+
   for (let index = 1; index <= limit; index++) {
     console.log(base * index);
   }
