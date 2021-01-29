@@ -1,8 +1,21 @@
-const argv = require('yargs')
+const yargs = require('yargs');
+const { createFile, listTable } = require('./multiply/table');
+
+let argv = yargs
   .command('list', 'Print the multiplication table on the console', {
     base: {
-      demandOption: true,
       alias: 'b',
+      demandOption: true,
+    },
+    limit: {
+      alias: 'l',
+      default: 10,
+    },
+  })
+  .command('create', 'create the table files', {
+    base: {
+      alias: 'b',
+      demandOption: true,
     },
     limit: {
       alias: 'l',
@@ -10,17 +23,25 @@ const argv = require('yargs')
     },
   })
   .help().argv;
-const { createFile } = require('./multiply/table');
 
-let processArgv = process.argv;
-console.log(argv.base, argv.limit);
-// let param = argv[2];
-// let base = param.split('=')[1];
+let command = argv._[0];
 
-// createFile(base)
-//   .then((resp) => {
-//     console.log(resp);
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
+switch (command) {
+  case 'list':
+    listTable(argv.base, argv.limit);
+    break;
+
+  case 'create':
+    createFile(argv.base, argv.limit)
+      .then((resp) => {
+        console.log(resp);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    break;
+
+  default:
+    console.log('command not recognized');
+    break;
+}
