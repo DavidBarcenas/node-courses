@@ -1,1 +1,5 @@
-[{"desc":"see my series","completed":false}]
+[
+  { "desc": "see my series", "completed": false },
+  { "desc": "review node", "completed": false },
+  { "desc": "go for a run", "completed": false }
+]

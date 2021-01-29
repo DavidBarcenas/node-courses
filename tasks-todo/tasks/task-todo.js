@@ -28,6 +28,12 @@ const create = (desc) => {
   return task;
 };
 
+const getList = () => {
+  uploadDB();
+  return taskList;
+};
+
 module.exports = {
   create,
+  getList,
 };
