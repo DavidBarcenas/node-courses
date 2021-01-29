@@ -9,7 +9,16 @@ const db = () => {
   });
 };
 
+const uploadDB = () => {
+  try {
+    taskList = require('./data.json');
+  } catch (error) {
+    taskList = [];
+  }
+};
+
 const create = (desc) => {
+  uploadDB();
   let task = {
     desc,
     completed: false,
