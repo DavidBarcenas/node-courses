@@ -21,6 +21,10 @@ switch (command) {
     let updated = task.update(argv.description, argv.completed);
     console.log(updated);
     break;
+  case 'delete':
+    let deleted = task.deleteTask(argv.description);
+    console.log(deleted);
+    break;
   default:
     console.log('command not recognized');
     break;

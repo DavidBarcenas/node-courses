@@ -45,8 +45,21 @@ const update = (desc, completed = true) => {
   return false;
 };
 
+const deleteTask = (desc) => {
+  uploadDB();
+  const index = taskList.findIndex((task) => task.desc === desc);
+  if (index >= 0) {
+    taskList.splice(index, 1);
+    db();
+    return true;
+  }
+
+  return false;
+};
+
 module.exports = {
   create,
   getList,
   update,
+  deleteTask,
 };
