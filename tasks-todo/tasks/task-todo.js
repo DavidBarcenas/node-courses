@@ -33,7 +33,20 @@ const getList = () => {
   return taskList;
 };
 
+const update = (desc, completed = true) => {
+  uploadDB();
+  const index = taskList.findIndex((task) => task.desc === desc);
+  if (index >= 0) {
+    taskList[index].completed = completed;
+    db();
+    return true;
+  }
+
+  return false;
+};
+
 module.exports = {
   create,
   getList,
+  update,
 };

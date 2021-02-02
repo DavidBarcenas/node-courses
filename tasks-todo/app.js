@@ -18,7 +18,8 @@ switch (command) {
     });
     break;
   case 'update':
-    console.log('update todo', argv.completed);
+    let updated = task.update(argv.description, argv.completed);
+    console.log(updated);
     break;
   default:
     console.log('command not recognized');
