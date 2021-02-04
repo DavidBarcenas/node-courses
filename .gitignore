@@ -4,6 +4,7 @@
 /node_modules
 /bases/node_modules
 /tasks-todo/node_modules
+/open-weather/node_modules
 /.pnp
 .pnp.js
 
