@@ -1,8 +1,6 @@
 const axios = require('axios');
 const { argv } = require('./config/yargs');
 
-console.log(argv.address);
-
 const encodeUrl = encodeURI(argv.address);
 const options = {
   method: 'GET',
@@ -22,7 +20,7 @@ const options = {
 axios
   .request(options)
   .then((response) => {
-    console.log(response.data);
+    console.log(`El clima de ${argv.address} es de ${response.data.main.temp}`);
   })
   .catch((error) => {
     console.error(error);
