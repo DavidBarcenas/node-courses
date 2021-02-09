@@ -5,21 +5,10 @@
     {{> navbar }}
 
     <div class="alert alert-info" role="alert">
-      A simple info alert—check it out! {{capitalize 'daveepro'}}
+      A simple info alert—check it out! {{name}}
     </div>
 
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-         <h1>1</h1>
-        </div>
-        <div class="carousel-item">
-         <h1>2</h1>
-        </div>
-        <div class="carousel-item">
-         <h1>3</h1>
-        </div>
-      </div>
+    <h1>About</h1>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -28,7 +17,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </a>
-      <p>{{getYear}}</p>
+      <p>{{year}}</p>
     <script src="assets/js/bootstrap.min.js"></script>
   </body>
 </html>
